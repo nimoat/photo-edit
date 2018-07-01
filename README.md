@@ -1,12 +1,11 @@
 # 图片编辑小程序--HiPhoto
 
 ​	全能、便捷的图片编辑工具。实现了图片裁剪、添加文字、涂鸦、拼长图、拼相框等图片编辑功能，另外还有一个简易的表情包制作功能。 
-
 ![主界面](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/mainPage.jpg)
 
 ​	扫描下面的微信小程序码，体验该小程序。
 
-![HiPhoto小程序码](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/QRcode.jpg)
+	![HiPhoto小程序码](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/QRcode.jpg)
 
 ## 目录
 
@@ -37,8 +36,7 @@
   3. 在裁剪框上检测触摸事件，通过获取手指移动距离实现裁剪框自由拖动；监测裁剪框右下圆点的触摸事件，通过获取手指移动距离计算裁剪框宽、高的增减，实现裁剪框的自由缩放功能。
 
   4. 用户裁剪完成（点击右上角√按钮后），根据保存的裁剪框宽、高以及图片缩放比例计算图片真实裁剪区域，根据计算好的区域将图片画在隐藏canvas上，得到裁剪后的图片。
-
-![裁剪界面](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/cropPage.jpg)
+	![裁剪界面](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/cropPage.jpg)
 
 ### 二、添加文字
 
