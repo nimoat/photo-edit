@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/modifyPhoto/modify",
+    "pages/splicePhoto/splice",
+    "pages/emotionChoose/emotionChoose",
+    "pages/emotionEdit/emotionEdit",
+    "pages/spliceMenu/spliceMenu"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#cc9999",
+    "navigationBarTitleText": "Hi-Photo",
+    "navigationBarTextStyle": "black"
+  }
+}
