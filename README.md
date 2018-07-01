@@ -2,7 +2,13 @@
 
 ###### 全能、便捷的图片编辑工具。实现了图片裁剪、添加文字、涂鸦、拼长图、拼相框等图片编辑功能，另外还有一个简易的表情包制作功能。
 
+<div align="center">
+<img src="http://pp.myapp.com/ma_pic2/0/shot_42391053_1_1488499316/550" height="330" width="190" >
+</div>
+
 ![主界面](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/mainPage.jpg)
+
+<img src="http://pp.myapp.com/ma_pic2/0/shot_42391053_1_1488499316/550" height="330" width="190" >
 
 ​###### 扫描下面的微信小程序码，体验该小程序。
 
