@@ -1,18 +1,16 @@
 # 图片编辑小程序--HiPhoto
 
-###### 全能、便捷的图片编辑工具。实现了图片裁剪、添加文字、涂鸦、拼长图、拼相框等图片编辑功能，另外还有一个简易的表情包制作功能。
+   全能、便捷的图片编辑工具。实现了图片裁剪、添加文字、涂鸦、拼长图、拼相框等图片编辑功能，另外还有一个简易的表情包制作功能。
 
 <div align="center">
-<img src="http://pp.myapp.com/ma_pic2/0/shot_42391053_1_1488499316/550" height="330" width="190" >
+<img alt="主界面" src="https://github.com/nimoat/photo-edit/raw/master/image/githubImg/mainPage.jpg">
 </div>
 
-![主界面](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/mainPage.jpg)
+   扫描下面的微信小程序码，体验该小程序。
 
-<img src="http://pp.myapp.com/ma_pic2/0/shot_42391053_1_1488499316/550" height="330" width="190" >
-
-​###### 扫描下面的微信小程序码，体验该小程序。
-
-![HiPhoto小程序码](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/QRcode.jpg)
+<div align="center">
+<img alt="HiPhoto小程序码" src="https://github.com/nimoat/photo-edit/raw/master/image/githubImg/QRcode.jpg">
+</div>
 
 ## 目录
 
@@ -44,7 +42,9 @@
 
   4. 用户裁剪完成（点击右上角√按钮后），根据保存的裁剪框宽、高以及图片缩放比例计算图片真实裁剪区域，根据计算好的区域将图片画在隐藏canvas上，得到裁剪后的图片。
 
-  ![裁剪界面](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/cropPage.jpg)
+<div align="center">
+<img alt="裁剪界面" src="https://github.com/nimoat/photo-edit/raw/master/image/githubImg/cropPage.jpg">
+</div>
 
 ### 二、添加文字
 
@@ -52,7 +52,9 @@
 
   2. 用户添加文字完成（点击右上角√按钮后），根据保存的text组件定位，文字大小、颜色、样式。将文字写在隐藏canvas上（先画原图片，再写文字），得到添加文字后的图片。
 
-  ![添加文字界面](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/textPage.jpg)
+<div align="center">
+<img alt="添加文字界面" src="https://github.com/nimoat/photo-edit/raw/master/image/githubImg/textPage.jpg">
+</div>
 
 ### 三、涂鸦功能
 
@@ -62,7 +64,9 @@
 
   3. 为了实现橡皮擦和清除功能（不破坏原图），采用将canvas组件覆盖在image组件上，image组件加载涂鸦前的原图，这样使用橡皮檫时擦掉的区域会显示原图。涂鸦完成后（返回主菜单），先保存canvas得到涂鸦图片，然后在隐藏canvas上先绘制涂鸦前的原图，再绘制涂鸦效果图。就能得到完整的涂鸦后的图片了。
 
-  ![涂鸦界面](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/doodlePage.jpg)
+<div align="center">
+<img alt="涂鸦界面" src="https://github.com/nimoat/photo-edit/raw/master/image/githubImg/doodlePage.jpg">
+</div>
 
 ### 四、拼长图
 
@@ -76,8 +80,9 @@
 
   2. 保存时，根据照片和相框图片的缩放比例和定位关系，在隐藏canvas中先画照片，再画相框，就就能实现拼相框功能。
 
-  ![拼相框界面](https://github.com/nimoat/photo-edit/raw/master/image/githubImg/framePage.jpg)
-
+<div align="center">
+<img alt="拼相框界面" src="https://github.com/nimoat/photo-edit/raw/master/image/githubImg/framePage.jpg">
+</div>
 
 ### 六、表情包制作
 
