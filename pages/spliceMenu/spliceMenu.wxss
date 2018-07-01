@@ -1,0 +1,54 @@
+/* pages/spliceMenu/spliceMenu.wxss *//**index.wxss**/
+.page-body-wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: #f8af9c;
+}
+.bg-img{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height:100%;
+}
+.btn-area{
+  position: absolute;
+  width:80%;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; 
+}
+.btn{
+  border: 1rpx solid #b17a7e;
+  width:140rpx;
+  height:140rpx;
+  padding: 0 10rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.btn:active{
+  background-color: #ccc;
+}
+.icon-longphoto{
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Ctitle%3Emap2%3C/title%3E %3Cpath d='M23.5 1.1c-0.3-0.2-0.7-0.2-1 0l-6.5 3.8-7.6-3.8c0 0 0 0 0 0s0 0-0.1 0c-0.1-0.1-0.2-0.1-0.3-0.1 0 0 0 0 0 0s0 0 0 0c-0.1 0-0.2 0-0.4 0.1 0 0 0 0-0.1 0 0 0-0.1 0-0.1 0l-7 4c-0.2 0.2-0.4 0.5-0.4 0.9v16c0 0.4 0.2 0.7 0.5 0.9s0.7 0.2 1 0l6.5-3.8 7.5 3.8c0 0 0 0 0 0 0.2 0.1 0.3 0.1 0.5 0.1 0.1 0 0.2 0 0.3-0.1 0 0 0.1 0 0.1 0s0 0 0.1 0l7-4c0.3-0.2 0.5-0.5 0.5-0.9v-16c0-0.4-0.2-0.7-0.5-0.9zM9 3.6l6 3v13.8l-6-3v-13.8zM2 6.6l5-2.9v13.7l-5 2.9v-13.7zM22 17.4l-5 2.9v-13.7l5-2.9v13.7z'%3E%3C/path%3E %3C/svg%3E");
+  background-size: cover;
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
+  margin: 0 auto;
+}
+.icon-frame{
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E %3Ctitle%3Eimage%3C/title%3E %3Cpath d='M28 29v-1h-1v-1h-1v-13h1v-1h1v-1h1v17h-1zM27 13h-1v1h-20v-1h-1v-1h-1v-1h24v1h-1v1zM5 13v1h1v13h-1v1h-1v1h-1v-17h1v1h1zM5 28h1v-1h20v1h1v1h1v1h-24v-1h1v-1zM12.856 22.982l2.286-3.697 2.286 2.304 3.143-4.731 3.286 8.142h-14.572l1.857-3.715 1.714 1.697zM11.491 19.009c-0.829 0-1.5-0.672-1.5-1.5s0.671-1.5 1.5-1.5c0.828 0 1.5 0.672 1.5 1.5s-0.672 1.5-1.5 1.5zM25 11l-7.322-5.45c-0.344 0.277-0.775 0.45-1.25 0.45-0.661 0-1.244-0.325-1.607-0.821l-7.821 5.821h-1l8.493-6.518c-0.038-0.155-0.064-0.315-0.064-0.482 0-1.104 0.895-2 1.999-2 1.105 0 2 0.896 2 2 0 0.359-0.103 0.692-0.269 0.984l7.841 6.016h-1z'%3E%3C/path%3E %3C/svg%3E ");
+  background-size: cover;
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
+  margin: 0 auto;
+}
+
+

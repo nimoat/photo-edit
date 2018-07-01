@@ -1,0 +1,10 @@
+<view class="emotion-page">
+  <view class="emotion-top">
+    <text>选择表情</text>
+    <view bindtap="chooseFromAlbum">从相册选择</view>
+  </view>
+  <view class="emotion-box" wx:for="{{imgUrl}}" wx:key="*this" data-idx="{{index}}" bindtap='chooseEmotion'>
+    <image src="{{item}}" mode="widthFix" lazy-load='true'></image>
+    <view class="img-wrap"></view>
+  </view>
+</view>

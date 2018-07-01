@@ -1,0 +1,206 @@
+.splice-page{
+  height:100%;
+  overflow: hidden;
+  background-color: #cc9999;
+}
+.saveButton{
+  position:absolute;
+  top:30rpx;
+  right:40rpx;
+  padding: 10rpx;
+  font-size: 0;
+  opacity: 0.7;
+  z-index: 5;
+}
+.saveButton .icon-save{
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Ctitle%3Esave%3C/title%3E %3Cpath d='M21.7 7.3l-5-5c-0.2-0.2-0.4-0.3-0.7-0.3h-11c-1.7 0-3 1.3-3 3v14c0 1.7 1.3 3 3 3h14c1.7 0 3-1.3 3-3v-11c0-0.3-0.1-0.5-0.3-0.7zM16 20h-8v-6h8v6zM20 19c0 0.6-0.4 1-1 1h-1v-7c0-0.6-0.4-1-1-1h-10c-0.6 0-1 0.4-1 1v7h-1c-0.6 0-1-0.4-1-1v-14c0-0.6 0.4-1 1-1h1v4c0 0.6 0.4 1 1 1h8c0.6 0 1-0.4 1-1s-0.4-1-1-1h-7v-3h7.6l4.4 4.4v10.6z'%3E%3C/path%3E %3C/svg%3E");
+  background-size: cover;
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+}
+.saveButton:active .icon-save{
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Ctitle%3Esave%3C/title%3E %3Cpath d='M21.7 7.3l-5-5c-0.2-0.2-0.4-0.3-0.7-0.3h-11c-1.7 0-3 1.3-3 3v14c0 1.7 1.3 3 3 3h14c1.7 0 3-1.3 3-3v-11c0-0.3-0.1-0.5-0.3-0.7zM16 20h-8v-6h8v6zM20 19c0 0.6-0.4 1-1 1h-1v-7c0-0.6-0.4-1-1-1h-10c-0.6 0-1 0.4-1 1v7h-1c-0.6 0-1-0.4-1-1v-14c0-0.6 0.4-1 1-1h1v4c0 0.6 0.4 1 1 1h8c0.6 0 1-0.4 1-1s-0.4-1-1-1h-7v-3h7.6l4.4 4.4v10.6z' fill='%23d6204b'%3E%3C/path%3E %3C/svg%3E");
+}
+.toolbar-bottom{
+  display: flex;
+  justify-content: space-around;
+  width:100%;
+  position: fixed;
+  bottom: 0;
+  height:160rpx;
+  border-top: 1rpx solid #b17a7e;
+  background-color: #cc9999;
+}
+.toolbar-bottom view{
+  display: inline-block;
+  width:150rpx;
+  height:120rpx;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  position: relative;
+  border-radius: 10rpx;
+}
+.toolbar-bottom view:active{
+  background-color: rgba(255,255,255,0.5);
+}
+.toolbar-bottom view text{
+  display: block;
+  margin: 0 auto;
+}
+.toolbar-bottom view .text{
+  position: absolute;
+  bottom: 0;
+  left:50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.longImage{
+  width:100%;
+  text-align: center;
+  background-color: #cc9999;
+  font-size: 0;
+}
+.img-wrapbox{
+  position: relative;
+  margin: 0;
+}
+.longImage image{
+  width:100%;
+  margin: 0;
+}
+.deleteTextBox{
+  position:absolute;
+  z-index: 100;
+  text-align: center;
+  font-size: 30rpx;
+  width:240rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 20rpx;
+  background-color: rgba(250, 150, 150, 0.9);
+  left:50%;
+  transform: translate(-50%,-100%);
+}
+.deleteTextBox:active{
+  background-color: #ccc;
+}
+.photoframe{
+  position: relative;
+  width:100%;
+  overflow: hidden; 
+}
+.photoframe .frame{
+  position: absolute;
+  z-index: 2;
+  width:100%;
+  margin: 0;
+}
+.photoframe .photo{
+  position: absolute;
+  z-index: 1;
+}
+@keyframes animation
+{
+  0%   {bottom:-900rpx;}
+  100% {bottom:0;}
+}
+.farmeChoose{
+  width:750rpx;
+  height:900rpx;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  background-color: #fff;
+  border-top:2rpx solid #ccc; 
+  box-shadow:10rpx -10rpx 10rpx 0 #ccc;  
+  font-size: 0;
+  animation-name:animation;
+  animation-duration: 0.2s;
+  animation-timing-function: ease;
+}
+.farmeChoose-top{
+  height:80rpx;
+  line-height:80rpx;
+  font-size: 40rpx;
+  border-bottom:1rpx solid #bbb; 
+  position: relative;
+}
+.farmeChoose-top-left{
+  position:absolute;
+  left:40rpx;
+}
+.farmeChoose-top-right{
+  position:absolute;
+  right:30rpx;
+  top:50%;
+  transform: translateY(-50%);
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Ctitle%3Ex%3C/title%3E %3Cpath d='M13.4 12l5.3-5.3c0.4-0.4 0.4-1 0-1.4s-1-0.4-1.4 0l-5.3 5.3-5.3-5.3c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l5.3 5.3-5.3 5.3c-0.4 0.4-0.4 1 0 1.4 0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3l5.3-5.3 5.3 5.3c0.2 0.2 0.5 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.4-0.4 0.4-1 0-1.4l-5.3-5.3z'%3E%3C/path%3E %3C/svg%3E");
+  background-size: cover;
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  border:2rpx solid #bbb;
+  border-radius: 50%;
+}
+.farmeChoose-top-right:active{
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Ctitle%3Ex%3C/title%3E %3Cpath d='M13.4 12l5.3-5.3c0.4-0.4 0.4-1 0-1.4s-1-0.4-1.4 0l-5.3 5.3-5.3-5.3c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l5.3 5.3-5.3 5.3c-0.4 0.4-0.4 1 0 1.4 0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3l5.3-5.3 5.3 5.3c0.2 0.2 0.5 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.4-0.4 0.4-1 0-1.4l-5.3-5.3z' fill='%23d6204b'%3E%3C/path%3E %3C/svg%3E");
+  border:2rpx solid #cc9999;
+}
+.farmeChoose scroll-view{
+  height:820rpx;
+}
+.farmeChoose .frameBox{
+  display: inline-block;
+  width:300rpx;
+  height:360rpx;
+  margin: 30rpx 35rpx;
+  border:1rpx solid #ccc;
+  overflow: hidden;
+  text-align: center;
+  /* box-shadow:20rpx -20rpx 0 0 #ccc;  */
+}
+.farmeChoose .frameBox:active{
+  background-color: #ddd;
+}
+.farmeChoose .frameBox image{
+  width:100%;
+  height:300rpx;
+}
+.farmeChoose .frameBox text{
+  font-size: 30rpx;
+}
+.icon-listadd{
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Ctitle%3Eplaylist_add%3C/title%3E %3Cpath d='M2.016 15.984v-1.969h7.969v1.969h-7.969zM18 14.016h3.984v1.969h-3.984v4.031h-2.016v-4.031h-3.984v-1.969h3.984v-4.031h2.016v4.031zM14.016 6v2.016h-12v-2.016h12zM14.016 9.984v2.016h-12v-2.016h12z' fill='%23d6204b'%3E%3C/path%3E %3C/svg%3E");
+  background-size: cover;
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  bottom: 50rpx;
+  left:50%;
+  transform: translateX(-50%);
+}
+.icon-frame{
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E %3Ctitle%3Eimage%3C/title%3E %3Cpath d='M28 29v-1h-1v-1h-1v-13h1v-1h1v-1h1v17h-1zM27 13h-1v1h-20v-1h-1v-1h-1v-1h24v1h-1v1zM5 13v1h1v13h-1v1h-1v1h-1v-17h1v1h1zM5 28h1v-1h20v1h1v1h1v1h-24v-1h1v-1zM12.856 22.982l2.286-3.697 2.286 2.304 3.143-4.731 3.286 8.142h-14.572l1.857-3.715 1.714 1.697zM11.491 19.009c-0.829 0-1.5-0.672-1.5-1.5s0.671-1.5 1.5-1.5c0.828 0 1.5 0.672 1.5 1.5s-0.672 1.5-1.5 1.5zM25 11l-7.322-5.45c-0.344 0.277-0.775 0.45-1.25 0.45-0.661 0-1.244-0.325-1.607-0.821l-7.821 5.821h-1l8.493-6.518c-0.038-0.155-0.064-0.315-0.064-0.482 0-1.104 0.895-2 1.999-2 1.105 0 2 0.896 2 2 0 0.359-0.103 0.692-0.269 0.984l7.841 6.016h-1z' fill='%23d6204b'%3E%3C/path%3E %3C/svg%3E ");
+  background-size: cover;
+  display: block;
+  width: 55rpx;
+  height: 55rpx;
+  position: absolute;
+  bottom: 50rpx;
+  left:50%;
+  transform: translateX(-50%);
+}
+.icon-photo{
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 28'%3E %3Ctitle%3Eimage%3C/title%3E %3Cpath d='M10 9c0 1.656-1.344 3-3 3s-3-1.344-3-3 1.344-3 3-3 3 1.344 3 3zM26 15v7h-22v-3l5-5 2.5 2.5 8-8zM27.5 4h-25c-0.266 0-0.5 0.234-0.5 0.5v19c0 0.266 0.234 0.5 0.5 0.5h25c0.266 0 0.5-0.234 0.5-0.5v-19c0-0.266-0.234-0.5-0.5-0.5zM30 4.5v19c0 1.375-1.125 2.5-2.5 2.5h-25c-1.375 0-2.5-1.125-2.5-2.5v-19c0-1.375 1.125-2.5 2.5-2.5h25c1.375 0 2.5 1.125 2.5 2.5z' fill='%23d6204b'%3E%3C/path%3E %3C/svg%3E ");
+  background-size: cover;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  bottom: 50rpx;
+  left:50%;
+  transform: translateX(-50%);
+}

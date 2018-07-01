@@ -1,0 +1,9 @@
+<!--pages/spliceMenu/spliceMenu.wxml-->
+ <view class="page-body-wrapper">
+  <image class="bg-img" src='../../image/background.png' mode='widthFix'></image>
+  <view class="btn-area">
+    <view class="btn" bindtap='chooseSpliceLongImg'><text class="icon-longphoto"></text><text>拼长图</text></view>
+    <view class="btn" bindtap='chooseSpliceFrame'><text class="icon-frame"></text><text>拼相框</text></view>
+  </view>
+</view>
+

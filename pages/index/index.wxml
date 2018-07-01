@@ -1,0 +1,10 @@
+ <view class="page-body-wrapper">
+  <image class="logo" src='../../image/logo.png' mode='widthFix'></image>
+  <image class="bg-img" src='../../image/background.png' mode='widthFix'></image>
+  <view class="btn-area">
+    <navigator class="btn btn1" hover-class="none" url="../modifyPhoto/modify"><text class="icon1"></text><text class="text">美图编辑</text></navigator>
+    <navigator class="btn btn2" hover-class="none" url="../spliceMenu/spliceMenu"><text class="icon2"></text><text class="text">趣味拼图</text></navigator>
+    <navigator class="btn btn3" hover-class="none" url="../emotionChoose/emotionChoose"><text class="icon3"></text><text class="text">智斗基地</text></navigator>
+  </view>
+</view>
+

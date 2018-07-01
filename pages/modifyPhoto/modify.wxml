@@ -1,0 +1,96 @@
+<view class="modify-page">
+   <!-- 隐藏canvas 保存图片用 -->
+  <canvas canvas-id="tempCanvas" disable-scroll="true" style="width:{{tempCanvasWidth}}px; height:{{tempCanvasHeight}}px; position:absolute;left:-999999px"></canvas>
+
+  <!-- 主页面 -->
+  <view class="imageView" wx:if="{{page==='mainPage'}}" style="height:{{imgViewHeight}}px">
+    <view class="noImageBox" wx:if="{{imageNotChoosed}}" bindtap='chooseOneImage'><text>点击选择图片</text></view>
+    <view class="saveButton" wx:if="{{!imageNotChoosed}}" bindtap='saveImgToPhone'><text class="icon-save"></text></view>
+    <image src="{{tempImageSrc}}" style="width:{{imgWidth}}px;height:{{imgHeight}}px;top:{{imgTop}}px;left:{{imgLeft}}px" disable-scroll="true"></image>
+  </view>
+   <!-- 裁剪页面 -->
+  <view class="imageView" wx:if="{{page==='cropPage'}}" style="height:{{imgViewHeight}}px">
+    <image src="{{tempImageSrc}}" style="width:{{imgWidth}}px;height:{{imgHeight}}px;top:{{imgTop}}px;left:{{imgLeft}}px" disable-scroll="true" bindtouchstart="uploadScaleStart" bindtouchmove="uploadScaleMove" bindtouchend="uploadScaleEnd"></image>
+    <view wx:if="{{isCroper}}" class="cropper-wraper">
+      <view class="corpper-view-box" bindtouchstart="croperStart" bindtouchmove="croperMove" style="width:{{cutW}}px;height:{{cutH}}px;left:{{cutL}}px;top:{{cutT}}px">
+        <view class="cropper-dashed-h"></view>
+        <view class="cropper-dashed-v"></view>
+        <view class="cropper-line-t" data-drag="top"></view>
+        <view class="cropper-line-r" data-drag="right"></view>
+        <view class="cropper-line-b" data-drag="bottom"></view>
+        <view class="cropper-line-l" data-drag="left"></view>
+        <view class="cropper-point point-tr" data-drag="topTight"></view>
+        <view class="cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragPointStart" catchtouchmove="dragPointMove"></view>
+        <view class="cropper-point point-bl" data-drag="bottomLeft"></view>
+        <view class="cropper-point point-lt" data-drag="leftTop"></view>
+      </view>
+    </view>
+  </view>
+  <!-- 添加文字页面 -->
+  <view class="imageView" wx:if="{{page==='textPage'}}" style="height:{{imgViewHeight}}px">
+    <image src="{{tempImageSrc}}" style="width:{{imgWidth}}px;height:{{imgHeight}}px;top:{{imgTop}}px;left:{{imgLeft}}px" disable-scroll="true"></image>
+    <text wx:if="{{allText.isTextActive}}" bindtap="{{allText.isTextActive?'focusInput':null}}" bindtouchstart="{{allText.isTextActive?'textMoveStart':null}}" bindtouchmove="{{allText.isTextActive?'textMove':null}}"class="active-text" style="left:{{allText.textL}}px;top:{{allText.textT}}px;font-size:{{allText.fontSize}}px;color:{{allText.fontColor}};font-style:{{allText.fontStyle}};font-weight:{{allText.fontWeight}}">{{allText.someText}}</text> 
+    <input focus="{{inputFocus}}"confirm-type="done" bindinput="inputText" style="position:absolute;left:-9999px;"></input>
+  </view>
+  <!-- 涂鸦页面 -->
+  <view class="imageView" wx:if="{{page==='doodlePage'}}" style="height:{{imgViewHeight}}px">
+     <image src="{{tempImageSrc}}" style="width:{{imgWidth}}px;height:{{imgHeight}}px;top:{{imgTop}}px;left:{{imgLeft}}px" disable-scroll="true"></image> 
+    <canvas class="myCanvas" canvas-id="myCanvas" disable-scroll="true" bindtouchstart="doodleStart" bindtouchmove="doodleMove" style="width:750rpx; height:{{canvasHeight}}px;"></canvas>
+  </view>
+
+  <!-- 主页面-底部 <image src="../../image/1.svg"></image>-->
+  <view class="toolbar-bottom" wx:if="{{page==='mainPage'}}">
+    <view bindtap='toCropPage'><text class="icon-cutter"></text><text class="text">裁剪</text></view>
+    <view bindtap='toTextPage'><text class="icon-text"></text><text class="text">添加文字</text></view>
+    <view bindtap='toDoodlePage'><text class="icon-pen"></text><text class="text">涂鸦</text></view>
+  </view>
+  <!-- 裁剪页面-底部 -->
+  <view class="toolbar-bottom" wx:if="{{page==='cropPage'}}">
+    <view bindtap='toMainPage'><text class="icon-back"></text><text class="text">主菜单</text></view>
+    <view bindtap='openCroper'><text class="icon-cutbox"></text><text class="text">裁剪框</text></view>
+    <view bindtap='bestShow'><text class="icon-bestshow"></text><text class="text">最佳显示</text></view>
+  </view>
+  <!-- 涂鸦页面-底部 -->
+  <view wx:if="{{page==='doodlePage'}}">
+    <view wx:if="{{isChooseWidth}}" class="toolbar-top toolbar-width">
+      <view class="slider-box"><slider bindchange="widthSliderChange" min="1" max="15" value="5" show-value></slider></view>
+    </view>
+    <view wx:if="{{isChooseColor}}" class="toolbar-top">
+      <view class="color-box"><view wx:for="{{allColor}}" class="color-point" data-selected="{{item}}"style="background:{{item}}" bindtap='lineColorChange'></view></view>
+    </view>
+    <view class="toolbar-bottom">
+      <view bindtap='doodleToMainPage'><text class="icon-back"></text><text class="text">主菜单</text></view>
+      <view bindtap='chooseLineWidth'><text class="icon-linewidth"></text><text class="text">宽度</text></view>
+      <view bindtap='chooseLineColor'><text class="icon-color"></text><text class="text">颜色</text></view>
+      <view class="eraser-box" bindtap='chooseEraser' style="background: {{isEraser?'rgba(255,255,255,0.5)':'transparent'}};"><text class="icon-eraser"></text><text class="text">橡皮檫</text></view>
+      <view class="clear-box" bindtap='chooseClear'><text class="icon-clear"></text><text class="text">清除</text></view>
+    </view>
+  </view>
+  <!-- 添加文字页面-底部 -->
+  <view wx:if="{{page==='textPage'}}">
+    <view wx:if="{{isChooseFontSize}}" class="toolbar-top toolbar-width">
+      <view class="slider-box"><slider bindchange="fontsizeSliderChange" min="8" max="26" value="14" show-value></slider></view>
+    </view>
+    <view wx:if="{{isChooseFontColor}}" class="toolbar-top">
+      <view class="color-box"><view wx:for="{{allColor}}" class="color-point" data-selected="{{item}}"style="background:{{item}}" bindtap='fontColorChange'></view></view>
+    </view>
+    <view wx:if="{{isChooseFontPattern}}" class="toolbar-top toolbar-font-style">
+      <view><text>斜体 : </text><switch bindchange="fontStyleChange"/></view>
+      <view><text>加粗 : </text><switch bindchange="fontWeightChange"/></view>
+    </view>
+    <view class="toolbar-bottom">
+      <view bindtap='textToMainPage'><text class="icon-back"></text><text class="text">主菜单</text></view>
+      <view bindtap="{{isTextEdit?null:'chooseaddText'}}"><text class="icon-add"></text><text class="text">添加</text></view>
+      <view bindtap='chooseFontsize'><text class="icon-size"></text><text class="text">大小</text></view>
+      <view bindtap='chooseFontColor'><text class="icon-color"></text><text class="text">颜色</text></view>
+      <view bindtap='chooseFontPattern'><text class="icon-style"></text><text class="text">样式</text></view>
+    </view>
+  </view>
+  <!-- 裁剪和添加文字时调出的确认条 -->
+  <view class="confirm-bar1" wx:if="{{isCroper||allText.isTextActive}}">
+    <text class="icon-cross" bindtap="{{isCroper?'cancelCrop':'cancelAddText'}}"></text>
+  </view>
+  <view class="confirm-bar2" wx:if="{{isCroper||allText.isTextActive}}">
+    <text class="icon-checkmark" bindtap="{{isCroper?'competeCrop':'competeAddText'}}"></text>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<view class="splice-page">
+  <!-- 隐藏canvas -->
+  <canvas canvas-id="tempCanvas" style="width:750rpx;height:{{totalHeight}}px;position:absolute;left:-999999px"></canvas>
+  <!-- 保存按钮 -->
+  <view class="saveButton" wx:if="{{readuSave}}" bindtap='saveImgToPhone'><text class="icon-save"></text></view>
+  <!-- 拼长图页面 -->
+  <scroll-view  scroll-y class="longImage" wx:if="{{page==='longImages'}}" style="height:{{imgViewHeight}}px">
+    <view class="img-wrapbox" wx:for="{{longImageSrcs}}" wx:key="*this">
+      <image src="{{item}}" mode="widthFix" data-idx="{{index}}" catchlongtap='gotoDelete' catchtap='quitDelete'></image>
+      <text class="deleteTextBox" wx:if='{{whichDeleteShow==index}}' bindtap='deleteImg' style="top:50%">删除这张？</text>
+    </view>
+  </scroll-view>
+  <!-- 拼相框页面 -->
+  <view class="photoframe" wx:if="{{page==='photoFrame'}}" style="height:{{frameHeight}}px" bindtouchstart="uploadScaleStart" bindtouchmove="uploadScaleMove" bindtouchend="uploadScaleEnd">
+    <image class="frame" src="{{frameSrc}}" mode="widthFix"></image>
+    <image class="photo" src="{{photoSrc}}" style="width:{{photoWidth}}px;height:{{photoHeight}}px;top:{{photoTop}}px;left:{{photoLeft}}px" disable-scroll="true"></image>
+  </view>
+  <!-- 拼长图页面 - 底部工具栏 -->
+  <view class="toolbar-bottom" wx:if="{{page==='longImages'}}">
+    <view bindtap='addImages'><text class="icon-listadd"></text><text class="text">添加图片</text></view>
+  </view>
+  <!-- 拼相框页面 - 底部工具栏 -->
+  <view class="toolbar-bottom" wx:if="{{page==='photoFrame'}}">
+    <view bindtap='addFrame'><text class="icon-frame"></text><text class="text">选择相框</text></view>
+    <view bindtap='addPhoto'><text class="icon-photo"></text><text class="text">添加照片</text></view>
+  </view>
+  <!-- 相框选择窗口 -->
+  <view class="farmeChoose" wx:if="{{isFrameChoose}}">
+    <view class="farmeChoose-top"><text class="farmeChoose-top-left">选择相框</text><text class="farmeChoose-top-right" bindtap='closeFrameChoose'></text></view>
+    <scroll-view  scroll-y>
+      <view wx:for="{{frameSrcs}}" wx:key="*this" data-src="{{item.src}}" class="frameBox" bindtap='chooseFrame'>
+        <image src="{{'../../image/frame/'+item.src}}" mode="aspectFit"></image><text>{{item.title}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

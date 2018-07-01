@@ -1,0 +1,36 @@
+<view class="emotion-page">
+  <!-- 保存按钮 -->
+  <view class="saveButton"  wx:if="{{!isTextEdit}}" bindtap='saveImgToPhone'><text class="icon-save"></text></view>
+  <view class="imageView">
+    <image src="{{emotionUrl}}" disable-scroll="true" ></image>
+    <text wx:for="{{allText}}" wx:key="idx" bindtap="{{item.isTextActive?'focusInput':null}}" bindtouchstart="{{item.isTextActive?'textMoveStart':null}}" bindtouchmove="{{item.isTextActive?'textMove':null}}"class="{{item.isTextActive?'active-text':'compete-text'}}" style="left:{{item.textL}}px;top:{{item.textT}}px;font-size:{{item.fontSize}}px;color:{{item.fontColor}};font-style:{{item.fontStyle}};font-weight:{{item.fontWeight}}">{{item.someText}}</text> 
+    <input focus="{{inputFocus}}"confirm-type="done" bindinput="inputText" style="position:absolute;top:0;left:-9999px;"></input>
+    <canvas canvas-id="tempCanvas" disable-scroll="true" style="width:400rpx; height:400rpx;position:absolute;left:-99999px;"></canvas>
+  </view>
+
+  <view>
+    <view wx:if="{{isChooseFontSize}}" class="toolbar-top toolbar-width">
+      <view class="slider-box"><slider bindchange="fontsizeSliderChange" min="8" max="26" value="14" show-value></slider></view>
+    </view>
+    <view wx:if="{{isChooseFontColor}}" class="toolbar-top">
+      <view class="color-box"><view wx:for="{{allColor}}" class="color-point" data-selected="{{item}}"style="background:{{item}}" bindtap='fontColorChange'></view></view>
+    </view>
+    <view wx:if="{{isChooseFontPattern}}" class="toolbar-top toolbar-font-style">
+      <view><text>斜体 : </text><switch bindchange="fontStyleChange"/></view>
+      <view><text>加粗 : </text><switch bindchange="fontWeightChange"/></view>
+    </view>
+    <view class="toolbar-bottom">
+      <view bindtap="{{isTextEdit?null:'chooseaddText'}}"><text class="icon-add"></text><text class="text">添加</text></view>
+      <view bindtap='chooseFontsize'><text class="icon-size"></text><text class="text">大小</text></view>
+      <view bindtap='chooseFontColor'><text class="icon-color"></text><text class="text">颜色</text></view>
+      <view bindtap='chooseFontPattern'><text class="icon-style"></text><text class="text">样式</text></view>
+    </view>
+  </view>
+    <!-- 裁剪和添加文字时调出的确认条 -->
+  <view class="confirm-bar1" wx:if="{{isTextEdit}}">
+    <text class="icon-cross" bindtap="cancelAddText"></text>
+  </view>
+  <view class="confirm-bar2" wx:if="{{isTextEdit}}">
+    <text class="icon-checkmark" bindtap="competeAddText"></text>
+  </view>
+</view>
